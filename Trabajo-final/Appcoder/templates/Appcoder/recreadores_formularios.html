@@ -1,0 +1,13 @@
+{% extends 'Appcoder/base.html' %} 
+
+
+{% block contenido %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ formulario.as_table}}
+
+    <input type="submit" value="Cargar Recreador">
+    
+</form>
+
+{% endblock %}
