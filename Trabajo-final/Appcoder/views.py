@@ -1,5 +1,5 @@
 from django.http import HttpResponse 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from Appcoder.models import Excursion, Participantes, Recreadores, Documentacion 
 from Appcoder.forms import RecreadorFormulario, ExcursionFormulario
 
@@ -41,6 +41,12 @@ def excursiones(request):
     contexto = {"listado_excursiones": excursiones, "formulario": formulario, "errores": errores}
     # Retornamos la respuesta
     return render(request, "Appcoder/excursiones.html", contexto)
+
+def eliminar_excursion(request, id):
+    excursion = Excursion.objects.get(id=id)
+    excursion.delete
+    
+    return redirect("coder-excursion")
 
 def participantes(request):
     return render(request, "Appcoder/participantes.html") 

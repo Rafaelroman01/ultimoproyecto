@@ -20,7 +20,7 @@
     <ul>
     
     {% for excursion in listado_excursiones %}
-        <li>{{excursion}}<a href="#">Borrar</a></li>
+        <li>{{excursion}}<a href="{% url 'coder-excursiones-borrar', excursion.id %}">Borrar</a></li>
 
     {% endfor %}
 
