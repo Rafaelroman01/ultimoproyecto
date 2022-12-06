@@ -20,13 +20,13 @@
     <ul>
     
     {% for excursion in listado_excursiones %}
-        <li>{{excursion}}</li>
+        <li>{{excursion}}<a href="#">Borrar</a></li>
 
     {% endfor %}
 
     </ul>
 {% else %}
-    <p>No y excursiones disponibles en estos momentos</p>
+    <p>No hay excursiones disponibles en estos momentos</p>
 
 {% endif %}
 {% endblock %}
